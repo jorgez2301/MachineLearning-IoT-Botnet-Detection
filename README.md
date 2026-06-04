@@ -109,20 +109,24 @@ El modelo con mejor rendimiento general fue **Gaussian Naive Bayes**, clasifican
 
 ## Estructura del repositorio
 
+## Estructura del repositorio
+
 ```text
 MachineLearning-IoT-Botnet-Detection/
 ├── README.md
 ├── requirements.txt
-├── notebooks/
-│   └── deteccion_trafico_iot_ml.ipynb
-├── src/
-│   └── deteccion_trafico_iot_ml.py
+├── data/
+│   └── README.md
+├── docs/
+│   └── ReporteMachineLearning-IoT-Botnet-Detection.pdf
 ├── img/
+│   ├── curvas_roc_modelos.png
 │   ├── distribucion_variable_objetivo.png
+│   ├── matriz_confusion_isolation_forest_multiclase.png
 │   ├── matriz_confusion_kmeans_5_variables_legible.png
 │   ├── matriz_confusion_kmeans_binario_legible.png
-│   ├── matriz_confusion_naive_bayes_legible.png
-│   ├── matriz_confusion_isolation_forest_multiclase.png
-│   └── curvas_roc_modelos.png
-└── docs/
-    └── reporte.pdf
+│   └── matriz_confusion_naive_bayes_legible.png
+├── notebooks/
+│   └── deteccion_trafico_iot_ml.ipynb
+└── src/
+    └── deteccion_trafico_iot_ml.py
