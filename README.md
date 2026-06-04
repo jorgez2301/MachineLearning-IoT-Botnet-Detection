@@ -68,18 +68,6 @@ Por esta razón, el archivo utilizado en el notebook no representa el dataset N-
 
 El dataset se descarga automáticamente mediante `gdown`, por lo que el CSV no se incluye directamente en el repositorio.
 
-## Variables utilizadas
-
-Se seleccionaron cinco características estadísticas del tráfico:
-
-| Variable | Descripción |
-|---|---|
-| H_L0.1_weight | Volumen o peso del tráfico del host en una ventana de 0.1 s |
-| H_L0.1_mean | Promedio del comportamiento del tráfico del host |
-| H_L0.1_variance | Variación o dispersión del tráfico del host |
-| HH_jit_L0.01_mean | Promedio del jitter entre host origen y host destino |
-| HpHp_L0.1_radius | Medida de dispersión en la comunicación entre sockets |
-
 ## Modelos evaluados
 
 ### K-Means multiclase
