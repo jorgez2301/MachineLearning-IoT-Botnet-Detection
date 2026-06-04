@@ -96,7 +96,7 @@ El modelo con mejor rendimiento general fue **Gaussian Naive Bayes**, clasifican
 ## Estructura del repositorio
 
 ```text
-proyecto-iot-ml/
+MachineLearning-IoT-Botnet-Detection/
 ├── README.md
 ├── requirements.txt
 ├── notebooks/
