@@ -19,28 +19,54 @@ Los modelos evaluados fueron:
 
 Se utilizó el dataset **N-BaIoT**, orientado a la detección de ataques de botnets en dispositivos IoT.
 
-Fuente del dataset:
+Fuentes originales:
 
 - Kaggle: https://www.kaggle.com/datasets/mkashifn/nbaiot-dataset
 - UCI Machine Learning Repository: https://doi.org/10.24432/C5RC8J
 - Paper base: https://doi.org/10.48550/arXiv.1805.03409
 
-El dataset completo contiene:
+El dataset completo contiene tráfico de distintos dispositivos IoT y múltiples archivos CSV asociados a tráfico benigno y ataques de botnets como Mirai y BASHLITE.
 
-- 7,062,606 registros
-- 115 variables atributo
-- Tráfico de dispositivos IoT infectados con botnets como Mirai y BASHLITE
+## Subconjunto utilizado
 
-En este proyecto se utilizó un subconjunto de:
+Para este proyecto no se trabajó directamente con el dataset completo, sino con un subconjunto preparado por el equipo.
 
-| Clase | Registros |
-|---|---:|
-| benign | 40,000 |
-| gafgyt.scan | 10,000 |
-| gafgyt.udp | 10,000 |
-| mirai.scan | 10,000 |
-| mirai.udp | 10,000 |
-| Total | 80,000 |
+El subconjunto corresponde al dispositivo IoT **Provision PT-737E**, una cámara de vigilancia incluida en el dataset N-BaIoT.
+
+A partir de este dispositivo se utilizaron los siguientes archivos originales:
+
+- `5.benign.csv`
+- `5.gafgyt.scan.csv`
+- `5.gafgyt.udp.csv`
+- `5.mirai.scan.csv`
+- `5.mirai.udp.csv`
+
+La distribución final utilizada fue:
+
+| Archivo original | Clase asignada | Registros usados |
+|---|---|---:|
+| `5.benign.csv` | `benign` | 40,000 |
+| `5.gafgyt.scan.csv` | `gafgyt.scan` | 10,000 |
+| `5.gafgyt.udp.csv` | `gafgyt.udp` | 10,000 |
+| `5.mirai.scan.csv` | `mirai.scan` | 10,000 |
+| `5.mirai.udp.csv` | `mirai.udp` | 10,000 |
+| Total | — | 80,000 |
+
+Del conjunto original de variables se seleccionaron cinco características estadísticas del tráfico:
+
+| Variable | Descripción |
+|---|---|
+| `H_L0.1_weight` | Volumen o peso del tráfico del host en una ventana de 0.1 s |
+| `H_L0.1_mean` | Promedio del comportamiento del tráfico del host |
+| `H_L0.1_variance` | Variación o dispersión del tráfico del host |
+| `HH_jit_L0.01_mean` | Promedio del jitter entre host origen y host destino |
+| `HpHp_L0.1_radius` | Medida de dispersión en la comunicación entre sockets |
+
+El archivo CSV que descarga el notebook desde Google Drive contiene este subconjunto ya integrado, con las cinco variables seleccionadas y una columna adicional llamada `Etiqueta`.
+
+Por esta razón, el archivo utilizado en el notebook no representa el dataset N-BaIoT completo, sino una versión filtrada y preparada para el experimento de este proyecto.
+
+El dataset se descarga automáticamente mediante `gdown`, por lo que el CSV no se incluye directamente en el repositorio.
 
 ## Variables utilizadas
 
